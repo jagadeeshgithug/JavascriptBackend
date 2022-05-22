@@ -1,0 +1,25 @@
+openapi: 3.0.0
+
+info:
+  title: Social App
+  description: all social medias app
+  version: 1.0.1
+
+servers:
+  - url: http://localhost:3000/api/v1
+    description: this is an localhost server
+  - url: https://localhost:3000/api/v1
+    description: this is test server
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+    cookieAuth: # arbitrary name for the security scheme; will be used in the "security" key later
+      type: apiKey
+      in: cookie
+      name: JSESSIONID
